@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Oxygene";
+    src: url("fonter/OXYGENE1.TTF") format("woff2"),
+        url("fonter/OXYGENE1.TTF") format("woff");
+}
+
+@font-face {
+    font-family: "Pusab";
+    src: url("PUSAB___.otf") format("woff2"),
+        url("PUSAB___.otf") format("woff");
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(rgb(5, 65, 252), rgb(2, 31, 107));
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oxygene", sans-serif;
+    color: greenyellow;
+    font-size: 25px;
+    height: 103px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+footer {
+    height: 102px; /*Tilpasset skjermen jeg bruker slik at den totale høyden på siden blir lik skjermen på en mac*/
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: "Pusab", sans-serif;
+    color: white;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h2 {
+    font-size: 40px;
+    text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+                -1px -1px 0 #000;
+}
+
+li {
+    padding-bottom: 20px;
+    list-style: none;
+}
+
+ul {
+    padding: 10;
+}
+
+canvas {
+    border: 4px solid black;
+}
+
+.difficulty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    justify-content: space-between;
+}
+
+.difficulty img {
+    width: 90px;
+    transition: all 0.2s;
+}
+
+#easy {
+    width: 110px;
+}
+
+.btnContainer {
+    height: 500px;
+    justify-content: space-between;
+}
+
+button {
+    background-color: greenyellow;
+    border: 2px solid black;
+    outline: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 7px 7px black;
+    font-family: "Pusab", sans-serif;
+    color: white;
+    height: 100px;
+    width: 150px;
+    text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+                -1px -1px 0 #000;
+    font-size: 20px;
+    transition: all 0.2s;
+}
+
+button:hover, img:hover {
+    transform: scale(1.1); 
+}
+
+button:active, img:active {
+    transform: scale(1.2);
+}
