@@ -74,7 +74,6 @@ function drawBane() {
         ctx.fillText(Math.floor(angleDisplay) + "°", char.x + 20, char.y + 20)
     }
 
-
     if (!stop) {
         ctx.fillStyle = "black"
         ctx.font = "30px Pusab"
@@ -379,8 +378,9 @@ function drawPlayBtn() {
         ctx.fillText("PRESS PLAY TO START", 100, 165)
         ctx.font = "30px Pusab"
         ctx.fillText("HIGHSCORE: " + highscore, 280, 220)
-        ctx.fillText("Use left/right arrow to avoid", 158, 410)
-        ctx.fillText("the trigonometric functions!", 165, 450)
+        ctx.fillText("Use left/right arrow keys to avoid", 115, 390)
+        ctx.fillText("the trigonometric functions", 167, 430)
+        ctx.fillText("and collect the coins", 220, 470)
     } else if (gameOver && !startscreen) {
         ctx.fillStyle = "white"
         ctx.font = "50px Pusab"
@@ -504,11 +504,6 @@ function chooseMusic(src) {
     music.src = "media/" + src + ".mp3"
 }
 //MUSIKK OG LYD
-
-
-//DETALJER
-
-//DETALJER
 
 
 //FINAL DRAW

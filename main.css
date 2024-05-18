@@ -121,5 +121,5 @@ button:active, img:active {
     width: 2em;
     height: 2rem;
     accent-color: greenyellow;
-      
+    margin: 20px;
 }
