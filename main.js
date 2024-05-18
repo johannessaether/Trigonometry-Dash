@@ -13,7 +13,7 @@ let collision = false
 let expOpacity = 1
 const pi2 = Math.PI * 2
 let gameSpeed = 4
-let details = false
+let details = true
 
 
 //BANE
@@ -194,8 +194,9 @@ function sinWave(amp, d) {
 
     if (details) {
         ctx.font = "15px sans-serif"
-        let number = (300 - d) / 200
-        ctx.fillText("f(x) = " + amp + "sin(x) + " + number.toFixed(2), 410, 320)
+        ctx.fillStyle = "black"
+        let numberD = (300 - d) / 200
+        ctx.fillText("f(x) = " + numberAmp.toFixed(2) + "sin(x) + " + numberD.toFixed(2), 410, 320)
     }
 }
 function yObstacle(amp, d) {
@@ -210,8 +211,9 @@ function yObstacle(amp, d) {
 
     if (details) {
         ctx.font = "15px sans-serif"
-        let number = (300 - d) / 200
-        ctx.fillText("f(x) = " + number.toFixed(2), 410, 320)
+        ctx.fillStyle = "black"
+        let numberD = (300 - d) / 200
+        ctx.fillText("f(x) = " + numberD.toFixed(2), 410, 320)
     }
 }
 function tan(amp, d) {
@@ -226,8 +228,9 @@ function tan(amp, d) {
 
     if (details) {
         ctx.font = "15px sans-serif"
-        let number = (300 - d) / 200
-        ctx.fillText("f(x) = " + amp + "tan(x) + " + number.toFixed(2), 410, 320)
+        ctx.fillStyle = "black"
+        let numberD = (300 - d) / 200
+        ctx.fillText("f(x) = " + numberAmp.toFixed(2) + "tan(x) + " + numberD.toFixed(2), 410, 320)
     }
 }
 function quad(amp, d) {
@@ -242,8 +245,10 @@ function quad(amp, d) {
 
     if (details) {
         ctx.font = "15px sans-serif"
-        let number = (300 - d) / 200
-        ctx.fillText("f(x) = " + amp + "x2 + " + number.toFixed(2), 410, 320)
+        ctx.fillStyle = "black"
+        let numberD = (300 - d) / 200
+        let numberAmp = amp / 600
+        ctx.fillText("f(x) = " + numberAmp.toFixed(2) + "x**2 + " + numberD.toFixed(2), 410, 320)
     }
 }
 const arr = [quad, yObstacle, sinWave, tan]
