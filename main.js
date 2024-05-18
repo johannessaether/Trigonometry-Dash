@@ -13,7 +13,7 @@ let collision = false
 let expOpacity = 1
 const pi2 = Math.PI * 2
 let gameSpeed = 4
-let details = true
+let details = false
 
 
 //BANE
@@ -24,6 +24,8 @@ const cirk = {
 }
 
 function drawBane() {
+    details = document.getElementById("details").checked
+
     for (let i = 0; i < board.width + 1; i += 100) {
         ctx.beginPath()
         ctx.strokeStyle = "grey"
@@ -91,26 +93,24 @@ const char = {
     x: board.width / 2,
     y: board.height / 2 - cirk.radius,
     angle: 3 * Math.PI / 2,
-    speed: 0, // Hastighet starter som null
-    acceleration: 0.05, // Akselerasjon for økning av hastighet
-    maxSpeed: 0.2 // Maksimal hastighet
+    speed: 0,
+    acceleration: 0.05, 
+    maxSpeed: 0.2 
 }
 
 function drawChar() {
     char.x = cirk.senterX + cirk.radius * Math.cos(char.angle)
     char.y = cirk.senterY + cirk.radius * Math.sin(char.angle)
 
-    //tegner karakter
     ctx.beginPath()
     ctx.fillStyle = "blue"
     ctx.arc(char.x, char.y, char.radius, 0, pi2)
 
     if (collision) {
-        ctx.fillStyle = "rgba(255, 0, 0, " + expOpacity + ")" // Rød med gradvis gjennomsiktighet
+        ctx.fillStyle = "rgba(255, 0, 0, " + expOpacity + ")"
         char.radius += 5
         expOpacity -= 0.02
     } else if (details) {
-        // Standardfarge og størrelse
         expOpacity = 1
         ctx.moveTo(char.x, char.y)
         ctx.lineTo(char.x, cirk.senterY)
@@ -131,9 +131,9 @@ function drawChar() {
 function update() {
     if (i < 0) {
         i = board.width
-        //n++
-        n = Math.floor(Math.random() * 5)
+        n = Math.floor(Math.random() * 4)
         randInt()
+        console.log(n)
     } else {
         i -= gameSpeed
     }
@@ -196,6 +196,7 @@ function sinWave(amp, d) {
         ctx.font = "15px sans-serif"
         ctx.fillStyle = "black"
         let numberD = (300 - d) / 200
+        let numberAmp = amp / 600
         ctx.fillText("f(x) = " + numberAmp.toFixed(2) + "sin(x) + " + numberD.toFixed(2), 410, 320)
     }
 }
@@ -230,6 +231,7 @@ function tan(amp, d) {
         ctx.font = "15px sans-serif"
         ctx.fillStyle = "black"
         let numberD = (300 - d) / 200
+        let numberAmp = amp / 600
         ctx.fillText("f(x) = " + numberAmp.toFixed(2) + "tan(x) + " + numberD.toFixed(2), 410, 320)
     }
 }
@@ -307,12 +309,12 @@ function detectCollision() {
 
 
 //TILFELDIGE TALL TIL HINDER
-let int1 = Math.floor((Math.random() - 0.5) * cirk.radius) // + cirk.senterY - cirk.radius
+let int1 = Math.floor((Math.random() - 0.5) * cirk.radius)
 let int2 = Math.floor(Math.random() * cirk.radius * 2 + cirk.senterY - cirk.radius)
 
 function randInt() {
-    int1 = Math.floor((Math.random() - 0.5) * cirk.radius) // + cirk.senterY - cirk.radius
-    int2 = Math.floor(Math.random() * cirk.radius * 2 + cirk.senterY - cirk.radius) // mellom 0 og 600
+    int1 = Math.floor((Math.random() - 0.5) * cirk.radius)
+    int2 = Math.floor(Math.random() * cirk.radius * 2 + cirk.senterY - cirk.radius)
 }
 //TILFELDIGE TALL TIL HINDER
 
@@ -504,6 +506,11 @@ function chooseMusic(src) {
 //MUSIKK OG LYD
 
 
+//DETALJER
+
+//DETALJER
+
+
 //FINAL DRAW
 function draw() {
     ctx.fillStyle = "rgb(255 255 255 / 30%)"
@@ -511,9 +518,6 @@ function draw() {
     drawBane()
     drawChar()
     if (!collision) {
-        if (n == arr.length) {
-            n = 0
-        }
         arr[n](int1, int2)
         placeCoin()
     }
