@@ -76,7 +76,7 @@ function drawBane() {
 
     if (!stop) {
         ctx.fillStyle = "black"
-        ctx.font = "30px Pusab"
+        ctx.font = "24px Pusab"
         ctx.fillText("Score: " + score, 30, 50)
         music.play()
     } else {
@@ -373,18 +373,18 @@ function drawPlayBtn() {
 
     if (startscreen) {
         ctx.fillStyle = "white"
-        ctx.font = "50px Pusab"
+        ctx.font = "40px Pusab"
         ctx.fillText("PRESS PLAY TO START", 100, 165)
-        ctx.font = "30px Pusab"
+        ctx.font = "24px Pusab"
         ctx.fillText("HIGHSCORE: " + highscore, 280, 220)
-        ctx.fillText("Use left/right arrow keys to avoid", 115, 390)
-        ctx.fillText("the trigonometric functions", 167, 430)
-        ctx.fillText("and collect the coins", 220, 470)
+        ctx.fillText("Use left/right arrow keys to avoid", 85, 390)
+        ctx.fillText("the trigonometric functions", 137, 430)
+        ctx.fillText("and collect the coins", 190, 470)
     } else if (gameOver && !startscreen) {
         ctx.fillStyle = "white"
-        ctx.font = "50px Pusab"
+        ctx.font = "40px Pusab"
         ctx.fillText("GAME OVER", 245, 165)
-        ctx.font = "30px Pusab"
+        ctx.font = "24px Pusab"
         ctx.fillText("SCORE: " + score, 320, 193)
         // Highscore
         if (score > highscore) {
@@ -395,9 +395,9 @@ function drawPlayBtn() {
         }
     } else {
         ctx.fillStyle = "white"
-        ctx.font = "50px Pusab"
+        ctx.font = "40px Pusab"
         ctx.fillText("PAUSE", 316, 165)
-        ctx.font = "30px Pusab"
+        ctx.font = "24px Pusab"
         ctx.fillText("SCORE: " + score, 320, 193)
     }
 

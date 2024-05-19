@@ -45,7 +45,7 @@ footer {
 }
 
 .container h2 {
-    font-size: 40px;
+    font-size: 30px;
     text-shadow: -1px 1px 0 #000,
                 1px 1px 0 #000,
                 1px -1px 0 #000,
@@ -101,7 +101,7 @@ button {
                 1px 1px 0 #000,
                 1px -1px 0 #000,
                 -1px -1px 0 #000;
-    font-size: 20px;
+    font-size: 13px;
     transition: all 0.2s;
 }
 
