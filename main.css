@@ -6,8 +6,8 @@
 
 @font-face {
     font-family: "Pusab";
-    src: url("PUSAB___.TTF") format("woff2"),
-        url("PUSAB___.TTF") format("woff");
+    src: url("PUSAB___.otf") format("woff2"),
+        url("PUSAB___.otf") format("woff");
 }
 
 body {

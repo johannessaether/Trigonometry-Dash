@@ -132,7 +132,6 @@ function update() {
         i = board.width
         n = Math.floor(Math.random() * 4)
         randInt()
-        console.log(n)
     } else {
         i -= gameSpeed
     }
