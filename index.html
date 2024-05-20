@@ -13,20 +13,26 @@
     </header>
 
     <div class="container">
-        <div>
-            <h2>Difficulty</h2>
-            <ul class="difficulty">
+        <div class="sidepanel">
+            <h2>Difficulty:</h2>
+            <div id="difficulty">
                 <img src="media/easy.png" alt="Easy" id="easy">
-                <img src="media/medium.png" alt="Medium"id="medium">
-                <img src="media/hard.png" alt="Hard"id="hard">
-            </ul>
+                <img src="media/medium.png" alt="Medium" id="medium">
+                <img src="media/hard.png" alt="Hard" id="hard">
+            </div>
             <div id="detailbox">
-                <h2>Details</h2>
+                <h2>Details:</h2>
                 <input type="checkbox" name="Details" id="details">
+            </div>
+            <h2>Character:</h2>
+            <div id="charColor">
+                <div id="blue"></div>
+                <div id="green"></div>
+                <div id="purple"></div>
             </div>
         </div>
         <canvas id="board"></canvas>
-        <div>
+        <div class="sidepanel">
             <h2>Music</h2>
             <div class="btnContainer">
                 <button id="stereomadness">Stereo Madness</button>
@@ -37,7 +43,9 @@
         </div>
     </div>
 
-    <footer></footer>
+    <footer>
+        <p>LAGET AV JOHANNES SAETHER</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>

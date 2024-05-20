@@ -93,8 +93,9 @@ const char = {
     y: board.height / 2 - cirk.radius,
     angle: 3 * Math.PI / 2,
     speed: 0,
-    acceleration: 0.05, 
-    maxSpeed: 0.2 
+    acceleration: 0.05,
+    maxSpeed: 0.2,
+    color: "blue"
 }
 
 function drawChar() {
@@ -102,7 +103,7 @@ function drawChar() {
     char.y = cirk.senterY + cirk.radius * Math.sin(char.angle)
 
     ctx.beginPath()
-    ctx.fillStyle = "blue"
+    ctx.fillStyle = char.color
     ctx.arc(char.x, char.y, char.radius, 0, pi2)
 
     if (collision) {
@@ -448,25 +449,25 @@ hard = document.getElementById("hard")
 
 easy.addEventListener("click", function () {
     gameSpeed = 4
-    easy.style.width = "110px"
-    medium.style.width = "90px"
-    hard.style.width = "90px"
+    easy.style.width = "80px"
+    medium.style.width = "60px"
+    hard.style.width = "60px"
     obj.radius = 20
 })
 
 medium.addEventListener("click", function () {
     gameSpeed = 6
-    easy.style.width = "90px"
-    medium.style.width = "110px"
-    hard.style.width = "90px"
+    easy.style.width = "60px"
+    medium.style.width = "80px"
+    hard.style.width = "60px"
     obj.radius = 30
 })
 
 hard.addEventListener("click", function () {
     gameSpeed = 8
-    easy.style.width = "90px"
-    medium.style.width = "90px"
-    hard.style.width = "110px"
+    easy.style.width = "60px"
+    medium.style.width = "60px"
+    hard.style.width = "80px"
     obj.radius = 40
 })
 //GAMEMODES
@@ -484,25 +485,56 @@ const loonboon = document.getElementById("loonboon")
 const tissetass = document.getElementById("tissetass") // Hjemmelaga sang til spillet, ikke døm navnet plis
 stereomadness.addEventListener("click", function () {
     chooseMusic("stereomadness")
-
+    stereomadness.style.backgroundColor = "green"
+    jumper.style.backgroundColor = "greenyellow"
+    loonboon.style.backgroundColor = "greenyellow"
+    tissetass.style.backgroundColor = "greenyellow"
 })
 
 jumper.addEventListener("click", function () {
     chooseMusic("jumper")
+    stereomadness.style.backgroundColor = "greenyellow"
+    jumper.style.backgroundColor = "green"
+    loonboon.style.backgroundColor = "greenyellow"
+    tissetass.style.backgroundColor = "greenyellow"
 })
 
 loonboon.addEventListener("click", function () {
     chooseMusic("loonboon")
+    stereomadness.style.backgroundColor = "greenyellow"
+    jumper.style.backgroundColor = "greenyellow"
+    loonboon.style.backgroundColor = "green"
+    tissetass.style.backgroundColor = "greenyellow"
 })
 
 tissetass.addEventListener("click", function () {
     chooseMusic("tissetass")
+    stereomadness.style.backgroundColor = "greenyellow"
+    jumper.style.backgroundColor = "greenyellow"
+    loonboon.style.backgroundColor = "greenyellow"
+    tissetass.style.backgroundColor = "green"
 })
 
 function chooseMusic(src) {
     music.src = "media/" + src + ".mp3"
 }
 //MUSIKK OG LYD
+
+
+//VELGE FARGE PÅ KARAKTER
+const blue = document.getElementById("blue")
+blue.addEventListener("click", function() {
+    char.color = "blue"
+})
+const green = document.getElementById("green")
+green.addEventListener("click", function() {
+    char.color = "green"
+})
+const purple = document.getElementById("purple")
+purple.addEventListener("click", function() {
+    char.color = "purple"
+})
+//VELGE FARGE PÅ KARAKTER
 
 
 //FINAL DRAW
