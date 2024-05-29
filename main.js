@@ -14,6 +14,8 @@ let expOpacity = 1
 const pi2 = Math.PI * 2
 let gameSpeed = 4
 let details = false
+let greenUnlock = false
+let purpleUnlock = false
 
 
 //BANE
@@ -82,6 +84,25 @@ function drawBane() {
     } else {
         music.pause()
     }
+
+    if (!greenUnlock) {
+        green.innerHTML = "50 coins"
+        green.style.backgroundColor = "black"
+    } 
+    if (score >= 50) {
+        greenUnlock = true
+        green.innerHTML = ""
+        green.style.backgroundColor = "green"
+    }
+    if (!purpleUnlock) {
+        purple.innerHTML = "100 coins"
+        purple.style.backgroundColor = "black"
+    } 
+    if (score >= 100) {
+        purpleUnlock = true
+        purple.innerHTML = ""
+        purple.style.backgroundColor = "purple"
+    }
 }
 //BANE
 
@@ -124,6 +145,22 @@ function drawChar() {
     ctx.fill()
     ctx.closePath()
 }
+const blue = document.getElementById("blue")
+blue.addEventListener("click", function() {
+    char.color = "blue"
+})
+const green = document.getElementById("green")
+green.addEventListener("click", function() {
+    if (greenUnlock) {
+        char.color = "green"
+    }
+})
+const purple = document.getElementById("purple")
+purple.addEventListener("click", function() {
+    if (purpleUnlock) {
+        char.color = "purple"
+    }
+})
 //KARAKTER
 
 
@@ -519,22 +556,6 @@ function chooseMusic(src) {
     music.src = "media/" + src + ".mp3"
 }
 //MUSIKK OG LYD
-
-
-//VELGE FARGE PÅ KARAKTER
-const blue = document.getElementById("blue")
-blue.addEventListener("click", function() {
-    char.color = "blue"
-})
-const green = document.getElementById("green")
-green.addEventListener("click", function() {
-    char.color = "green"
-})
-const purple = document.getElementById("purple")
-purple.addEventListener("click", function() {
-    char.color = "purple"
-})
-//VELGE FARGE PÅ KARAKTER
 
 
 //FINAL DRAW

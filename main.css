@@ -158,16 +158,11 @@ button:active, img:active, #charColor div:active {
     margin: 10px;
     border-radius: 50%;
     border: 2px solid black;
+    font-size: 10px;
+    text-align: center;
+    justify-content: center;
 }
 
 #blue {
     background-color: blue;
-}
-
-#green {
-    background-color: green;
-}
-
-#purple {
-    background-color: purple;
 }
